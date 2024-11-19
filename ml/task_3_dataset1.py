@@ -1,0 +1,18 @@
+import pandas as pd
+df=pd.read_csv('employees.csv')
+print(df)
+print(df.dtypes=='object')
+print(df.isnull().sum())
+print('\n')
+
+df['First Name'].fillna('No First Name',inplace=True)
+print(df.isnull().sum())
+print('\n')
+df['Senior Management'].fillna(method='bfill',inplace=True)
+print(df.isnull().sum())
+print('\n')
+df['Team'].fillna(method='pad',inplace=True)
+print(df.isnull().sum())
+print('\n')
+df['Gender'].fillna('No Gender',inplace=True)
+print(df.isnull().sum())
